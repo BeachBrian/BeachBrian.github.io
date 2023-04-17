@@ -387,7 +387,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="at">data=</span>andrewavgpt, <span class="fu">aes</span>(<span class="at">x=</span>game_date, <span class="at">y=</span>rolling_avg, <span class="at">label=</span>athlete_display_name)) <span class="sc">+</span></span>
 <span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="at">data=</span>walkeravgpt, <span class="fu">aes</span>(<span class="at">x=</span>game_date, <span class="at">y=</span>rolling_avg, <span class="at">label=</span>athlete_display_name)) <span class="sc">+</span></span>
 <span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text_repel</span>(<span class="at">data=</span>jalenavgpt, <span class="fu">aes</span>(<span class="at">x=</span>game_date, <span class="at">y=</span>rolling_avg, <span class="at">label=</span>athlete_display_name)) <span class="sc">+</span></span>
-<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">"Mathurin's scoring slump may have hurt ROY finalist chance"</span>, <span class="at">subtitle =</span> <span class="st">"Nembhard's late season surge not enough to keep pace with Banchero, Williams in points"</span>, <span class="at">x=</span><span class="st">"Game date"</span>, <span class="at">y=</span><span class="st">"PPG 8-game rolling average"</span>,  <span class="at">caption=</span><span class="st">"Source: hoopR | By Brian Beach"</span>) <span class="sc">+</span> </span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">"Mathurin's scoring slump may have hurt ROY finalist chance"</span>, <span class="at">subtitle =</span> <span class="st">"Nembhard's late season surge not enough to enter into Rookie of the Year conversation"</span>, <span class="at">x=</span><span class="st">"Game date"</span>, <span class="at">y=</span><span class="st">"PPG 8-game rolling average"</span>,  <span class="at">caption=</span><span class="st">"Source: hoopR | By Brian Beach"</span>) <span class="sc">+</span> </span>
 <span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span> </span>
 <span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
 <span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>, <span class="at">face =</span> <span class="st">"bold"</span>),</span>
@@ -401,6 +401,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 <p>Sure enough, Mathurin held steady as the number two scoring rookie in the league for most of the season and surged toward the end of January. However, Mathurin’s rolling average of points per game dropped significantly in February and March, while Jalen Williams caught fire. Mathurin had more points per game over the course of the season, but Williams played well when it mattered most, helping the Thunder sneak into a play-in spot.</p>
+<p>There are plenty of advanced metrics out there today, but points and rebounds remain the standard summary of a player’s success. When plotting each NBA player’s season totals in both statistics, it is clear that Banchero was the best rookie of the five in the analysis, though he is nowhere near the league’s elite.</p>
+<p>Mathurin is the closest to Banchero’s dot, and though he did not have as many rebounds as Kessler or Williams, his position on the scatter plot appears more favorable. Andrew Nembhard did a fine job taking over for the injured Haliburton late in the season, but it was clearly not nearly enough for a rookie of the year nomination.</p>
 <div class="cell">
 <details>
 <summary>Code</summary>
@@ -442,6 +444,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><img src="index_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
+<p>Mathurin, Kessler and Williams each have a strong case to be considered as Rookie of the Year finalists, but only two were able to receive the honor.</p>
+<p>As a biased Pacers fan, I would say that Mathurin was snubbed, but Jazz and Thunder fans would likely be saying the same thing if their young stars weren’t selected — especially since all three teams are in relatively small media markets often overlooked by the national sports analysts.</p>
 
 
 
