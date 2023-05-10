@@ -213,14 +213,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 
 
-<p>Fans of some NBA teams are able to watch playoff basketball with baited breath, but for Pacer fans, the month of May has been prime time for off season content as of late.</p>
-<p>Behold, an analysis of the teams with</p>
-<p>But for the Indiana Pacers</p>
-<p>While Pacers fans may wish there was playoff content,</p>
-<p>No data metric can fully quantify a player’s popularity, but social media follower counts are a good place to start.</p>
-<p>Some NBA stars are known worldwide even among people who do not follow the NBA, but other stars from small market teams — looking at you, Tyrese Haliburton — are not as well known and therefore, could be considered underrated.</p>
-<p>Thanks to a website with the suspiciously straightforward title, <a href="https://www.popularbasketballers.com/">popularbasketballers.com</a>, the number of Instagram Followers for 443 professional basketball players as of April 25, 2023 is easily accessible.</p>
-<p>Unsurprisingly, LeBron James with his more than 150 million Instagram followers lead the league, with Steph Curry’s 50 million followers in a distant second place. The third highest follower count belongs to Russell Westbrook with around 22 million, making both LeBron and Steph are outliers in the league. Therefore, LeBron and Steph’s followers were removed from the dataset for this analysis.</p>
+<p>Some NBA fans get to spend the month of May watching their team take part in a heated playoff series on national television.</p>
+<p>For others, May is a month to spend several hours combing through social media data and writing code to determine which players are underrated and deserve more respect the following year.</p>
+<p>Over the last few seasons, fans of the Indiana Pacers have been part of the latter category. And when they’re not busy <a href="https://beachbrian.github.io/posts/post-with-code/">crying</a> about how one of their rookies wasn’t a Rookie of the Year finalist, many are often seen finding alternative methods to complain about how their players are consistently overlooked and underrated.</p>
+<p>One of the most straightforward ways to determine a player’s popularity in the league is the number of Instagram followers they have.</p>
+<p>Thanks to a website with the suspiciously straightforward title —<a href="https://www.popularbasketballers.com/">popularbasketballers.com</a> — that number is easily accessible for 443 professional basketball players as of April 25, 2023.</p>
+<p>Unsurprisingly, LeBron James with his more than 150 million Instagram followers lead the league, with Steph Curry’s 50 million in a distant second place. The third highest follower count belongs to Russell Westbrook with around 22 million, making both LeBron and Steph substantial outliers in the league.</p>
+<p>However, even after removing the two most popular players in the league from the dataset, Lakers and Warriors players have the highest number of average Instagram followers of any team. Meanwhile, the Indiana Pacers have the second lowest average in the league, with just over 200,000 followers. That may seem like a lot to a normal person, but that number is significantly low for an NBA player. Only the San Antonio Spurs have a lower average follower count.</p>
 <div class="cell">
 <details>
 <summary>Code</summary>
@@ -337,7 +336,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><img src="index_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-<p>There are some issues with For example, two-time league MVP Nikola Jókic does not have an Instagram page at all while Ja Morant recently <a href="https://www.yahoo.com/news/ja-morant-deactivates-twitter-instagram-213202377.html">deactivated</a> his account.</p>
+<p>Player success on the court is linked to high follower counts online, but the link is not nearly as strong as some may expect. In fact, only 22% of the variation in Instagram follower counts can be attributed to a player’s average points per game.</p>
 <div class="cell">
 <details>
 <summary>Code</summary>
@@ -364,132 +363,138 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(athlete_display_name <span class="sc">!=</span> <span class="st">"LeBron James"</span> <span class="sc">&amp;</span></span>
 <span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>         athlete_display_name <span class="sc">!=</span> <span class="st">"Stephen Curry"</span>)</span>
 <span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>pacersplayers <span class="ot">&lt;-</span> bestplayerlogsig <span class="sc">%&gt;%</span> </span>
-<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(athlete_display_name <span class="sc">==</span> <span class="st">"Aaron Nesmith"</span> <span class="sc">|</span></span>
-<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>          athlete_display_name <span class="sc">==</span> <span class="st">"Bennedict Mathurin"</span> <span class="sc">|</span></span>
-<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>          athlete_display_name <span class="sc">==</span> <span class="st">"Buddy Hield"</span> <span class="sc">|</span></span>
-<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>          athlete_display_name <span class="sc">==</span> <span class="st">"Chris Duarte"</span> <span class="sc">|</span></span>
-<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>          athlete_display_name <span class="sc">==</span> <span class="st">"Daniel Theis"</span> <span class="sc">|</span></span>
-<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>          athlete_display_name <span class="sc">==</span> <span class="st">"Goga Bitadze"</span> <span class="sc">|</span></span>
-<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>          athlete_display_name <span class="sc">==</span> <span class="st">"Isaiah Jackson"</span> <span class="sc">|</span></span>
-<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>          athlete_display_name <span class="sc">==</span> <span class="st">"Jalen Smith"</span> <span class="sc">|</span></span>
-<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>          athlete_display_name <span class="sc">==</span> <span class="st">"Jordan Nwora"</span> <span class="sc">|</span></span>
-<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>          athlete_display_name <span class="sc">==</span> <span class="st">"Myles Turner"</span> <span class="sc">|</span></span>
-<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>          athlete_display_name <span class="sc">==</span> <span class="st">"T.J. McConnell"</span> <span class="sc">|</span></span>
-<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>          athlete_display_name <span class="sc">==</span> <span class="st">"Terry Taylor"</span> <span class="sc">|</span></span>
-<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>          athlete_display_name <span class="sc">==</span> <span class="st">"Tyrese Haliburton"</span>)</span>
-<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>tyrese <span class="ot">&lt;-</span> bestplayerlogsig <span class="sc">%&gt;%</span> </span>
-<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(athlete_display_name <span class="sc">==</span> <span class="st">"Tyrese Haliburton"</span>)</span>
-<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>russ <span class="ot">&lt;-</span> bestplayerlogsig <span class="sc">%&gt;%</span> </span>
-<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(athlete_display_name <span class="sc">==</span> <span class="st">"Russell Westbrook"</span>)</span>
-<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a>klay <span class="ot">&lt;-</span> bestplayerlogsig <span class="sc">%&gt;%</span> </span>
-<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(athlete_display_name <span class="sc">==</span> <span class="st">"Klay Thompson"</span>)</span>
-<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a>kyrie <span class="ot">&lt;-</span> bestplayerlogsig <span class="sc">%&gt;%</span> </span>
-<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(athlete_display_name <span class="sc">==</span> <span class="st">"Kyrie Irving"</span>)</span>
-<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a>giannis <span class="ot">&lt;-</span> bestplayerlogsig <span class="sc">%&gt;%</span> </span>
-<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(athlete_display_name <span class="sc">==</span> <span class="st">"Giannis Antetokounmpo"</span>)</span>
-<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span> </span>
-<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data=</span>bestplayerlogsig, <span class="fu">aes</span>(<span class="at">x=</span>AvgPoints, <span class="at">y=</span><span class="st">`</span><span class="at">Instagram Followers</span><span class="st">`</span>), <span class="at">color=</span><span class="st">"grey"</span>) <span class="sc">+</span></span>
-<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data=</span>pacersplayers, <span class="fu">aes</span>(<span class="at">x=</span>AvgPoints, <span class="at">y=</span><span class="st">`</span><span class="at">Instagram Followers</span><span class="st">`</span>), <span class="at">color=</span><span class="st">"#002D62"</span>) <span class="sc">+</span></span>
-<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data=</span>tyrese, <span class="fu">aes</span>(<span class="at">x=</span>AvgPoints, <span class="at">y=</span><span class="st">`</span><span class="at">Instagram Followers</span><span class="st">`</span>), <span class="at">color=</span><span class="st">"#002D62"</span>) <span class="sc">+</span> <span class="fu">geom_text_repel</span>(<span class="at">data=</span>tyrese, <span class="fu">aes</span>(<span class="at">x=</span>AvgPoints, <span class="at">y=</span><span class="st">`</span><span class="at">Instagram Followers</span><span class="st">`</span>, <span class="at">label=</span>athlete_display_name)) <span class="sc">+</span> </span>
-<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data=</span>russ, <span class="fu">aes</span>(<span class="at">x=</span>AvgPoints, <span class="at">y=</span><span class="st">`</span><span class="at">Instagram Followers</span><span class="st">`</span>), <span class="at">color=</span><span class="st">"#C8102E"</span>) <span class="sc">+</span> <span class="fu">geom_text_repel</span>(<span class="at">data=</span>russ, <span class="fu">aes</span>(<span class="at">x=</span>AvgPoints, <span class="at">y=</span><span class="st">`</span><span class="at">Instagram Followers</span><span class="st">`</span>, <span class="at">label=</span>athlete_display_name)) <span class="sc">+</span></span>
-<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data=</span>klay, <span class="fu">aes</span>(<span class="at">x=</span>AvgPoints, <span class="at">y=</span><span class="st">`</span><span class="at">Instagram Followers</span><span class="st">`</span>), <span class="at">color=</span><span class="st">"#FFC72C"</span>) <span class="sc">+</span> <span class="fu">geom_text_repel</span>(<span class="at">data=</span>klay, <span class="fu">aes</span>(<span class="at">x=</span>AvgPoints, <span class="at">y=</span><span class="st">`</span><span class="at">Instagram Followers</span><span class="st">`</span>, <span class="at">label=</span>athlete_display_name)) <span class="sc">+</span></span>
-<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data=</span>kyrie, <span class="fu">aes</span>(<span class="at">x=</span>AvgPoints, <span class="at">y=</span><span class="st">`</span><span class="at">Instagram Followers</span><span class="st">`</span>), <span class="at">color=</span><span class="st">"#00538C"</span>) <span class="sc">+</span> <span class="fu">geom_text_repel</span>(<span class="at">data=</span>kyrie, <span class="fu">aes</span>(<span class="at">x=</span>AvgPoints, <span class="at">y=</span><span class="st">`</span><span class="at">Instagram Followers</span><span class="st">`</span>, <span class="at">label=</span>athlete_display_name)) <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="at">data=</span>giannis, <span class="fu">aes</span>(<span class="at">x=</span>AvgPoints, <span class="at">y=</span><span class="st">`</span><span class="at">Instagram Followers</span><span class="st">`</span>), <span class="at">color=</span><span class="st">"#00471B"</span>) <span class="sc">+</span> <span class="fu">geom_text_repel</span>(<span class="at">data=</span>giannis, <span class="fu">aes</span>(<span class="at">x=</span>AvgPoints, <span class="at">y=</span><span class="st">`</span><span class="at">Instagram Followers</span><span class="st">`</span>, <span class="at">label=</span><span class="st">"Giannis"</span>)) <span class="sc">+</span></span>
-<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">data=</span>bestplayerlogsig, <span class="fu">aes</span>(<span class="at">x=</span>AvgPoints, <span class="at">y=</span><span class="st">`</span><span class="at">Instagram Followers</span><span class="st">`</span>), <span class="at">method=</span><span class="st">"lm"</span>, <span class="at">color=</span><span class="st">"red3"</span>) <span class="sc">+</span> </span>
-<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels=</span>comma) <span class="sc">+</span> </span>
-<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">"Pacer players have fewer Instagram followers than expected"</span>, <span class="at">subtitle =</span> <span class="st">"No Pacers averaging more than 5 points per game have more Instagram followers than league trend line."</span>,  <span class="at">x=</span><span class="st">"Points Per Game"</span>, <span class="at">y=</span><span class="st">""</span>, <span class="at">caption =</span> <span class="st">"Source: hoopR &amp; popularbasketballers.com | By Brian Beach"</span>) <span class="sc">+</span> </span>
-<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span> </span>
-<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
-<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>, <span class="at">face =</span> <span class="st">"bold"</span>),</span>
-<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">11</span>), </span>
-<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title.position =</span> <span class="st">"plot"</span></span>
-<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(AvgPoints <span class="sc">~</span> <span class="st">`</span><span class="at">Instagram Followers</span><span class="st">`</span>, <span class="at">data =</span> bestplayerlogsig)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output-display">
-<p><img src="index_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" width="672"></p>
 </div>
-</div>
-<p>The Indiana Pacers play in the 22nd largest television <a href="https://hoop-social.com/nba-team-market-size-rankings/">market</a> out of the 28 in the league and three straight</p>
-<p>While the team has some young stars highlighted in the last blog <a href="https://beachbrian.github.io/posts/post-with-code/">post</a>,</p>
+<p>Still, it is clear that Pacer players are far less popular than their peers around the league. Every Pacer who averaged more than 5 points per game in the 2022-2023 season has fewer Instagram followers than the linear trend line would suggest, while stars in larger markets such as Russell Westbrook and Klay Thompson have far more followers than their points per game would predict.</p>
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>playersscaled <span class="ot">&lt;-</span> bestplayerlogsig <span class="sc">%&gt;%</span> </span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(AvgPoints, AvgRebounds, AvgAssists, AvgMinutes) <span class="sc">%&gt;%</span> </span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate_all</span>(scale) <span class="sc">%&gt;%</span> </span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">na.omit</span>()</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>playerclusters <span class="ot">&lt;-</span> <span class="fu">kmeans</span>(playersscaled, <span class="at">centers =</span> <span class="dv">12</span>, <span class="at">nstart =</span> <span class="dv">25</span>)</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>playerclustersdf <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(bestplayerlogsig, playerclusters<span class="sc">$</span>cluster) </span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>cluster8 <span class="ot">&lt;-</span> playerclustersdf <span class="sc">%&gt;%</span> </span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(playerclusters.cluster <span class="sc">==</span> <span class="dv">8</span>) </span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>cleancluster8 <span class="ot">&lt;-</span> <span class="fu">subset</span>(cluster8, <span class="at">select =</span> <span class="sc">-</span><span class="fu">c</span>(Rank, playerclusters.cluster))</span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>cleancluster8 <span class="sc">%&gt;%</span>  </span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_label</span>(</span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">athlete_display_name =</span> <span class="st">""</span>,</span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">AvgPoints =</span> <span class="st">"PPG"</span>,</span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">AvgRebounds =</span> <span class="st">"RPG"</span>,</span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">AvgAssists =</span> <span class="st">"APG"</span>,</span>
-<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">AvgMinutes =</span> <span class="st">"MPG"</span>,</span>
-<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">Instagram.Followers =</span> <span class="st">"Followers"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_header</span>(</span>
-<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"How does Haliburton compare to peers in social media popularity?"</span>,</span>
-<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"The Pacers point guard has far fewer followers on Instagram than other players with similar statistics."</span></span>
-<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> <span class="fu">tab_style</span>(</span>
-<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> <span class="fu">cell_text</span>(<span class="at">color =</span> <span class="st">"black"</span>, <span class="at">weight =</span> <span class="st">"bold"</span>, <span class="at">align =</span> <span class="st">"left"</span>),</span>
-<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> <span class="fu">cells_title</span>(<span class="st">"title"</span>)</span>
-<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> <span class="fu">tab_style</span>(</span>
-<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> <span class="fu">cell_text</span>(<span class="at">color =</span> <span class="st">"black"</span>, <span class="at">align =</span> <span class="st">"left"</span>),</span>
-<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> <span class="fu">cells_title</span>(<span class="st">"subtitle"</span>)</span>
-<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> <span class="fu">tab_source_note</span>(</span>
-<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>    <span class="at">source_note =</span> <span class="fu">md</span>(<span class="st">"Source: hoopR &amp; popularbasketballers.com | By Brian Beach"</span>)</span>
-<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
-<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_style</span>(</span>
-<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>     <span class="at">locations =</span> <span class="fu">cells_column_labels</span>(<span class="at">columns =</span> <span class="fu">everything</span>()),</span>
-<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>     <span class="at">style =</span> <span class="fu">list</span>(</span>
-<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>       <span class="fu">cell_borders</span>(<span class="at">sides =</span> <span class="st">"bottom"</span>, <span class="at">weight =</span> <span class="fu">px</span>(<span class="dv">3</span>)),</span>
-<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a>       <span class="fu">cell_text</span>(<span class="at">weight =</span> <span class="st">"bold"</span>, <span class="at">size=</span><span class="dv">12</span>)</span>
-<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a>     )</span>
-<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a>  <span class="fu">opt_row_striping</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a>  <span class="fu">opt_table_lines</span>(<span class="st">"none"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_number</span>(</span>
-<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a>    <span class="at">columns =</span> <span class="fu">c</span>(AvgPoints, AvgRebounds, AvgAssists, AvgMinutes),</span>
-<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a>    <span class="at">decimals =</span> <span class="dv">1</span></span>
-<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
-<span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_number</span>(</span>
-<span id="cb3-50"><a href="#cb3-50" aria-hidden="true" tabindex="-1"></a>    <span class="at">columns =</span> <span class="fu">c</span>(Instagram.Followers), </span>
-<span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a>    <span class="at">sep_mark =</span> <span class="st">","</span>,</span>
-<span id="cb3-52"><a href="#cb3-52" aria-hidden="true" tabindex="-1"></a>    <span class="at">decimals =</span> <span class="dv">0</span></span>
-<span id="cb3-53"><a href="#cb3-53" aria-hidden="true" tabindex="-1"></a>) <span class="sc">%&gt;%</span> </span>
-<span id="cb3-54"><a href="#cb3-54" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_style</span>(</span>
-<span id="cb3-55"><a href="#cb3-55" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> <span class="fu">list</span>(</span>
-<span id="cb3-56"><a href="#cb3-56" aria-hidden="true" tabindex="-1"></a>      <span class="fu">cell_fill</span>(<span class="at">color =</span> <span class="st">"#002D62"</span>),</span>
-<span id="cb3-57"><a href="#cb3-57" aria-hidden="true" tabindex="-1"></a>      <span class="fu">cell_text</span>(<span class="at">color =</span> <span class="st">"#FDBB30"</span>)</span>
-<span id="cb3-58"><a href="#cb3-58" aria-hidden="true" tabindex="-1"></a>      ),</span>
-<span id="cb3-59"><a href="#cb3-59" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> <span class="fu">cells_body</span>(</span>
-<span id="cb3-60"><a href="#cb3-60" aria-hidden="true" tabindex="-1"></a>      <span class="at">rows =</span> athlete_display_name <span class="sc">==</span> <span class="st">"Tyrese Haliburton"</span>)</span>
-<span id="cb3-61"><a href="#cb3-61" aria-hidden="true" tabindex="-1"></a>  ) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>pacersplayers <span class="ot">&lt;-</span> bestplayerlogsig <span class="sc">%&gt;%</span> </span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(athlete_display_name <span class="sc">==</span> <span class="st">"Aaron Nesmith"</span> <span class="sc">|</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>          athlete_display_name <span class="sc">==</span> <span class="st">"Bennedict Mathurin"</span> <span class="sc">|</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>          athlete_display_name <span class="sc">==</span> <span class="st">"Buddy Hield"</span> <span class="sc">|</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>          athlete_display_name <span class="sc">==</span> <span class="st">"Chris Duarte"</span> <span class="sc">|</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>          athlete_display_name <span class="sc">==</span> <span class="st">"Daniel Theis"</span> <span class="sc">|</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>          athlete_display_name <span class="sc">==</span> <span class="st">"Goga Bitadze"</span> <span class="sc">|</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>          athlete_display_name <span class="sc">==</span> <span class="st">"Isaiah Jackson"</span> <span class="sc">|</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>          athlete_display_name <span class="sc">==</span> <span class="st">"Jalen Smith"</span> <span class="sc">|</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>          athlete_display_name <span class="sc">==</span> <span class="st">"Jordan Nwora"</span> <span class="sc">|</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>          athlete_display_name <span class="sc">==</span> <span class="st">"Myles Turner"</span> <span class="sc">|</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>          athlete_display_name <span class="sc">==</span> <span class="st">"T.J. McConnell"</span> <span class="sc">|</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>          athlete_display_name <span class="sc">==</span> <span class="st">"Terry Taylor"</span> <span class="sc">|</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>          athlete_display_name <span class="sc">==</span> <span class="st">"Tyrese Haliburton"</span>)</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>tyrese <span class="ot">&lt;-</span> bestplayerlogsig <span class="sc">%&gt;%</span> </span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(athlete_display_name <span class="sc">==</span> <span class="st">"Tyrese Haliburton"</span>)</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>russ <span class="ot">&lt;-</span> bestplayerlogsig <span class="sc">%&gt;%</span> </span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(athlete_display_name <span class="sc">==</span> <span class="st">"Russell Westbrook"</span>)</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>klay <span class="ot">&lt;-</span> bestplayerlogsig <span class="sc">%&gt;%</span> </span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(athlete_display_name <span class="sc">==</span> <span class="st">"Klay Thompson"</span>)</span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>kyrie <span class="ot">&lt;-</span> bestplayerlogsig <span class="sc">%&gt;%</span> </span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(athlete_display_name <span class="sc">==</span> <span class="st">"Kyrie Irving"</span>)</span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>giannis <span class="ot">&lt;-</span> bestplayerlogsig <span class="sc">%&gt;%</span> </span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(athlete_display_name <span class="sc">==</span> <span class="st">"Giannis Antetokounmpo"</span>)</span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span> </span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data=</span>bestplayerlogsig, <span class="fu">aes</span>(<span class="at">x=</span>AvgPoints, <span class="at">y=</span><span class="st">`</span><span class="at">Instagram Followers</span><span class="st">`</span>), <span class="at">color=</span><span class="st">"grey"</span>) <span class="sc">+</span></span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data=</span>pacersplayers, <span class="fu">aes</span>(<span class="at">x=</span>AvgPoints, <span class="at">y=</span><span class="st">`</span><span class="at">Instagram Followers</span><span class="st">`</span>), <span class="at">color=</span><span class="st">"#002D62"</span>) <span class="sc">+</span></span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data=</span>tyrese, <span class="fu">aes</span>(<span class="at">x=</span>AvgPoints, <span class="at">y=</span><span class="st">`</span><span class="at">Instagram Followers</span><span class="st">`</span>), <span class="at">color=</span><span class="st">"#002D62"</span>) <span class="sc">+</span> <span class="fu">geom_text_repel</span>(<span class="at">data=</span>tyrese, <span class="fu">aes</span>(<span class="at">x=</span>AvgPoints, <span class="at">y=</span><span class="st">`</span><span class="at">Instagram Followers</span><span class="st">`</span>, <span class="at">label=</span>athlete_display_name)) <span class="sc">+</span> </span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data=</span>russ, <span class="fu">aes</span>(<span class="at">x=</span>AvgPoints, <span class="at">y=</span><span class="st">`</span><span class="at">Instagram Followers</span><span class="st">`</span>), <span class="at">color=</span><span class="st">"#C8102E"</span>) <span class="sc">+</span> <span class="fu">geom_text_repel</span>(<span class="at">data=</span>russ, <span class="fu">aes</span>(<span class="at">x=</span>AvgPoints, <span class="at">y=</span><span class="st">`</span><span class="at">Instagram Followers</span><span class="st">`</span>, <span class="at">label=</span>athlete_display_name)) <span class="sc">+</span></span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data=</span>klay, <span class="fu">aes</span>(<span class="at">x=</span>AvgPoints, <span class="at">y=</span><span class="st">`</span><span class="at">Instagram Followers</span><span class="st">`</span>), <span class="at">color=</span><span class="st">"#FFC72C"</span>) <span class="sc">+</span> <span class="fu">geom_text_repel</span>(<span class="at">data=</span>klay, <span class="fu">aes</span>(<span class="at">x=</span>AvgPoints, <span class="at">y=</span><span class="st">`</span><span class="at">Instagram Followers</span><span class="st">`</span>, <span class="at">label=</span>athlete_display_name)) <span class="sc">+</span></span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data=</span>kyrie, <span class="fu">aes</span>(<span class="at">x=</span>AvgPoints, <span class="at">y=</span><span class="st">`</span><span class="at">Instagram Followers</span><span class="st">`</span>), <span class="at">color=</span><span class="st">"#00538C"</span>) <span class="sc">+</span> <span class="fu">geom_text_repel</span>(<span class="at">data=</span>kyrie, <span class="fu">aes</span>(<span class="at">x=</span>AvgPoints, <span class="at">y=</span><span class="st">`</span><span class="at">Instagram Followers</span><span class="st">`</span>, <span class="at">label=</span>athlete_display_name)) <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="at">data=</span>giannis, <span class="fu">aes</span>(<span class="at">x=</span>AvgPoints, <span class="at">y=</span><span class="st">`</span><span class="at">Instagram Followers</span><span class="st">`</span>), <span class="at">color=</span><span class="st">"#00471B"</span>) <span class="sc">+</span> <span class="fu">geom_text_repel</span>(<span class="at">data=</span>giannis, <span class="fu">aes</span>(<span class="at">x=</span>AvgPoints, <span class="at">y=</span><span class="st">`</span><span class="at">Instagram Followers</span><span class="st">`</span>, <span class="at">label=</span><span class="st">"Giannis"</span>)) <span class="sc">+</span></span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">data=</span>bestplayerlogsig, <span class="fu">aes</span>(<span class="at">x=</span>AvgPoints, <span class="at">y=</span><span class="st">`</span><span class="at">Instagram Followers</span><span class="st">`</span>), <span class="at">method=</span><span class="st">"lm"</span>, <span class="at">color=</span><span class="st">"red3"</span>) <span class="sc">+</span> </span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels=</span>comma) <span class="sc">+</span> </span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title=</span><span class="st">"Pacer players have fewer Instagram followers than expected"</span>, <span class="at">subtitle =</span> <span class="st">"No Pacers averaging more than 5 points per game have more followers than league trend line."</span>,  <span class="at">x=</span><span class="st">"Points Per Game"</span>, <span class="at">y=</span><span class="st">"Instagram Followers"</span>, <span class="at">caption =</span> <span class="st">"Source: hoopR &amp; popularbasketballers.com | By Brian Beach"</span>) <span class="sc">+</span> </span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span> </span>
+<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>, <span class="at">face =</span> <span class="st">"bold"</span>),</span>
+<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">11</span>), </span>
+<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title.position =</span> <span class="st">"plot"</span></span>
+<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<p><img src="index_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>A closer analysis of Tyrese Haliburton and his NBA peers highlights a stark difference in Instagram popularity, despite similar points, rebounds, assists and minutes per game this season.</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>playersscaled <span class="ot">&lt;-</span> bestplayerlogsig <span class="sc">%&gt;%</span> </span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(AvgPoints, AvgRebounds, AvgAssists, AvgMinutes) <span class="sc">%&gt;%</span> </span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate_all</span>(scale) <span class="sc">%&gt;%</span> </span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">na.omit</span>()</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>playerclusters <span class="ot">&lt;-</span> <span class="fu">kmeans</span>(playersscaled, <span class="at">centers =</span> <span class="dv">12</span>, <span class="at">nstart =</span> <span class="dv">25</span>)</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>playerclustersdf <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(bestplayerlogsig, playerclusters<span class="sc">$</span>cluster) </span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>cluster8 <span class="ot">&lt;-</span> playerclustersdf <span class="sc">%&gt;%</span> </span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(playerclusters.cluster <span class="sc">==</span> <span class="dv">8</span>) </span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>cleancluster8 <span class="ot">&lt;-</span> <span class="fu">subset</span>(cluster8, <span class="at">select =</span> <span class="sc">-</span><span class="fu">c</span>(Rank, playerclusters.cluster))</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>cleancluster8 <span class="sc">%&gt;%</span>  </span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_label</span>(</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">athlete_display_name =</span> <span class="st">""</span>,</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">AvgPoints =</span> <span class="st">"PPG"</span>,</span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">AvgRebounds =</span> <span class="st">"RPG"</span>,</span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">AvgAssists =</span> <span class="st">"APG"</span>,</span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">AvgMinutes =</span> <span class="st">"MPG"</span>,</span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">Instagram.Followers =</span> <span class="st">"Followers"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_header</span>(</span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"How does Haliburton compare to peers in social media popularity?"</span>,</span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"The Pacers point guard has far fewer followers on Instagram than other players with similar statistics."</span></span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> <span class="fu">tab_style</span>(</span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> <span class="fu">cell_text</span>(<span class="at">color =</span> <span class="st">"black"</span>, <span class="at">weight =</span> <span class="st">"bold"</span>, <span class="at">align =</span> <span class="st">"left"</span>),</span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> <span class="fu">cells_title</span>(<span class="st">"title"</span>)</span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> <span class="fu">tab_style</span>(</span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> <span class="fu">cell_text</span>(<span class="at">color =</span> <span class="st">"black"</span>, <span class="at">align =</span> <span class="st">"left"</span>),</span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> <span class="fu">cells_title</span>(<span class="st">"subtitle"</span>)</span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> <span class="fu">tab_source_note</span>(</span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a>    <span class="at">source_note =</span> <span class="fu">md</span>(<span class="st">"Source: hoopR &amp; popularbasketballers.com | By Brian Beach"</span>)</span>
+<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_style</span>(</span>
+<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a>     <span class="at">locations =</span> <span class="fu">cells_column_labels</span>(<span class="at">columns =</span> <span class="fu">everything</span>()),</span>
+<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a>     <span class="at">style =</span> <span class="fu">list</span>(</span>
+<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a>       <span class="fu">cell_borders</span>(<span class="at">sides =</span> <span class="st">"bottom"</span>, <span class="at">weight =</span> <span class="fu">px</span>(<span class="dv">3</span>)),</span>
+<span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a>       <span class="fu">cell_text</span>(<span class="at">weight =</span> <span class="st">"bold"</span>, <span class="at">size=</span><span class="dv">12</span>)</span>
+<span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a>     )</span>
+<span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a>  <span class="fu">opt_row_striping</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb4-44"><a href="#cb4-44" aria-hidden="true" tabindex="-1"></a>  <span class="fu">opt_table_lines</span>(<span class="st">"none"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb4-45"><a href="#cb4-45" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_number</span>(</span>
+<span id="cb4-46"><a href="#cb4-46" aria-hidden="true" tabindex="-1"></a>    <span class="at">columns =</span> <span class="fu">c</span>(AvgPoints, AvgRebounds, AvgAssists, AvgMinutes),</span>
+<span id="cb4-47"><a href="#cb4-47" aria-hidden="true" tabindex="-1"></a>    <span class="at">decimals =</span> <span class="dv">1</span></span>
+<span id="cb4-48"><a href="#cb4-48" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb4-49"><a href="#cb4-49" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_number</span>(</span>
+<span id="cb4-50"><a href="#cb4-50" aria-hidden="true" tabindex="-1"></a>    <span class="at">columns =</span> <span class="fu">c</span>(Instagram.Followers), </span>
+<span id="cb4-51"><a href="#cb4-51" aria-hidden="true" tabindex="-1"></a>    <span class="at">sep_mark =</span> <span class="st">","</span>,</span>
+<span id="cb4-52"><a href="#cb4-52" aria-hidden="true" tabindex="-1"></a>    <span class="at">decimals =</span> <span class="dv">0</span></span>
+<span id="cb4-53"><a href="#cb4-53" aria-hidden="true" tabindex="-1"></a>) <span class="sc">%&gt;%</span> </span>
+<span id="cb4-54"><a href="#cb4-54" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_style</span>(</span>
+<span id="cb4-55"><a href="#cb4-55" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> <span class="fu">list</span>(</span>
+<span id="cb4-56"><a href="#cb4-56" aria-hidden="true" tabindex="-1"></a>      <span class="fu">cell_fill</span>(<span class="at">color =</span> <span class="st">"#002D62"</span>),</span>
+<span id="cb4-57"><a href="#cb4-57" aria-hidden="true" tabindex="-1"></a>      <span class="fu">cell_text</span>(<span class="at">color =</span> <span class="st">"#FDBB30"</span>)</span>
+<span id="cb4-58"><a href="#cb4-58" aria-hidden="true" tabindex="-1"></a>      ),</span>
+<span id="cb4-59"><a href="#cb4-59" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> <span class="fu">cells_body</span>(</span>
+<span id="cb4-60"><a href="#cb4-60" aria-hidden="true" tabindex="-1"></a>      <span class="at">rows =</span> athlete_display_name <span class="sc">==</span> <span class="st">"Tyrese Haliburton"</span>)</span>
+<span id="cb4-61"><a href="#cb4-61" aria-hidden="true" tabindex="-1"></a>  ) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 
-<div id="hpjaiityzw" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="fqdfocbfkd" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-:where(#hpjaiityzw) .gt_table {
+:where(#fqdfocbfkd) .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -514,7 +519,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-left-color: #D3D3D3;
 }
 
-:where(#hpjaiityzw) .gt_heading {
+:where(#fqdfocbfkd) .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -526,12 +531,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-right-color: #D3D3D3;
 }
 
-:where(#hpjaiityzw) .gt_caption {
+:where(#fqdfocbfkd) .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-:where(#hpjaiityzw) .gt_title {
+:where(#fqdfocbfkd) .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -543,7 +548,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-bottom-width: 0;
 }
 
-:where(#hpjaiityzw) .gt_subtitle {
+:where(#fqdfocbfkd) .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -555,13 +560,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-top-width: 0;
 }
 
-:where(#hpjaiityzw) .gt_bottom_border {
+:where(#fqdfocbfkd) .gt_bottom_border {
   border-bottom-style: none;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-:where(#hpjaiityzw) .gt_col_headings {
+:where(#fqdfocbfkd) .gt_col_headings {
   border-top-style: none;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -576,7 +581,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-right-color: #D3D3D3;
 }
 
-:where(#hpjaiityzw) .gt_col_heading {
+:where(#fqdfocbfkd) .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -596,7 +601,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   overflow-x: hidden;
 }
 
-:where(#hpjaiityzw) .gt_column_spanner_outer {
+:where(#fqdfocbfkd) .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -608,15 +613,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 4px;
 }
 
-:where(#hpjaiityzw) .gt_column_spanner_outer:first-child {
+:where(#fqdfocbfkd) .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-:where(#hpjaiityzw) .gt_column_spanner_outer:last-child {
+:where(#fqdfocbfkd) .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-:where(#hpjaiityzw) .gt_column_spanner {
+:where(#fqdfocbfkd) .gt_column_spanner {
   border-bottom-style: none;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -628,7 +633,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   width: 100%;
 }
 
-:where(#hpjaiityzw) .gt_group_heading {
+:where(#fqdfocbfkd) .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -654,7 +659,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   text-align: left;
 }
 
-:where(#hpjaiityzw) .gt_empty_group_heading {
+:where(#fqdfocbfkd) .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -669,15 +674,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   vertical-align: middle;
 }
 
-:where(#hpjaiityzw) .gt_from_md > :first-child {
+:where(#fqdfocbfkd) .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-:where(#hpjaiityzw) .gt_from_md > :last-child {
+:where(#fqdfocbfkd) .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-:where(#hpjaiityzw) .gt_row {
+:where(#fqdfocbfkd) .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -696,7 +701,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   overflow-x: hidden;
 }
 
-:where(#hpjaiityzw) .gt_stub {
+:where(#fqdfocbfkd) .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -709,7 +714,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-:where(#hpjaiityzw) .gt_stub_row_group {
+:where(#fqdfocbfkd) .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -723,11 +728,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   vertical-align: top;
 }
 
-:where(#hpjaiityzw) .gt_row_group_first td {
+:where(#fqdfocbfkd) .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-:where(#hpjaiityzw) .gt_summary_row {
+:where(#fqdfocbfkd) .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -737,16 +742,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-:where(#hpjaiityzw) .gt_first_summary_row {
+:where(#fqdfocbfkd) .gt_first_summary_row {
   border-top-style: none;
   border-top-color: #D3D3D3;
 }
 
-:where(#hpjaiityzw) .gt_first_summary_row.thick {
+:where(#fqdfocbfkd) .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-:where(#hpjaiityzw) .gt_last_summary_row {
+:where(#fqdfocbfkd) .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -756,7 +761,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-bottom-color: #D3D3D3;
 }
 
-:where(#hpjaiityzw) .gt_grand_summary_row {
+:where(#fqdfocbfkd) .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -766,7 +771,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-:where(#hpjaiityzw) .gt_first_grand_summary_row {
+:where(#fqdfocbfkd) .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -776,11 +781,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-top-color: #D3D3D3;
 }
 
-:where(#hpjaiityzw) .gt_striped {
+:where(#fqdfocbfkd) .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-:where(#hpjaiityzw) .gt_table_body {
+:where(#fqdfocbfkd) .gt_table_body {
   border-top-style: none;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -789,7 +794,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-bottom-color: #D3D3D3;
 }
 
-:where(#hpjaiityzw) .gt_footnotes {
+:where(#fqdfocbfkd) .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -803,7 +808,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-right-color: #D3D3D3;
 }
 
-:where(#hpjaiityzw) .gt_footnote {
+:where(#fqdfocbfkd) .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -812,7 +817,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-:where(#hpjaiityzw) .gt_sourcenotes {
+:where(#fqdfocbfkd) .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -826,7 +831,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-right-color: #D3D3D3;
 }
 
-:where(#hpjaiityzw) .gt_sourcenote {
+:where(#fqdfocbfkd) .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -834,64 +839,64 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-:where(#hpjaiityzw) .gt_left {
+:where(#fqdfocbfkd) .gt_left {
   text-align: left;
 }
 
-:where(#hpjaiityzw) .gt_center {
+:where(#fqdfocbfkd) .gt_center {
   text-align: center;
 }
 
-:where(#hpjaiityzw) .gt_right {
+:where(#fqdfocbfkd) .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-:where(#hpjaiityzw) .gt_font_normal {
+:where(#fqdfocbfkd) .gt_font_normal {
   font-weight: normal;
 }
 
-:where(#hpjaiityzw) .gt_font_bold {
+:where(#fqdfocbfkd) .gt_font_bold {
   font-weight: bold;
 }
 
-:where(#hpjaiityzw) .gt_font_italic {
+:where(#fqdfocbfkd) .gt_font_italic {
   font-style: italic;
 }
 
-:where(#hpjaiityzw) .gt_super {
+:where(#fqdfocbfkd) .gt_super {
   font-size: 65%;
 }
 
-:where(#hpjaiityzw) .gt_footnote_marks {
+:where(#fqdfocbfkd) .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-:where(#hpjaiityzw) .gt_asterisk {
+:where(#fqdfocbfkd) .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-:where(#hpjaiityzw) .gt_indent_1 {
+:where(#fqdfocbfkd) .gt_indent_1 {
   text-indent: 5px;
 }
 
-:where(#hpjaiityzw) .gt_indent_2 {
+:where(#fqdfocbfkd) .gt_indent_2 {
   text-indent: 10px;
 }
 
-:where(#hpjaiityzw) .gt_indent_3 {
+:where(#fqdfocbfkd) .gt_indent_3 {
   text-indent: 15px;
 }
 
-:where(#hpjaiityzw) .gt_indent_4 {
+:where(#fqdfocbfkd) .gt_indent_4 {
   text-indent: 20px;
 }
 
-:where(#hpjaiityzw) .gt_indent_5 {
+:where(#fqdfocbfkd) .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -915,66 +920,102 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     </tr>
   </thead>
   <tbody class="gt_table_body">
-    <tr><td headers="athlete_display_name" class="gt_row gt_left">Chris Paul</td>
-<td headers="AvgPoints" class="gt_row gt_right">13.5</td>
-<td headers="AvgRebounds" class="gt_row gt_right">4.3</td>
-<td headers="AvgAssists" class="gt_row gt_right">9.1</td>
-<td headers="AvgMinutes" class="gt_row gt_right">31.9</td>
-<td headers="Instagram.Followers" class="gt_row gt_right">11,643,929</td></tr>
-    <tr><td headers="athlete_display_name" class="gt_row gt_left gt_striped">Damian Lillard</td>
-<td headers="AvgPoints" class="gt_row gt_right gt_striped">32.1</td>
-<td headers="AvgRebounds" class="gt_row gt_right gt_striped">4.7</td>
-<td headers="AvgAssists" class="gt_row gt_right gt_striped">7.3</td>
-<td headers="AvgMinutes" class="gt_row gt_right gt_striped">36.2</td>
-<td headers="Instagram.Followers" class="gt_row gt_right gt_striped">9,844,747</td></tr>
-    <tr><td headers="athlete_display_name" class="gt_row gt_left">Darius Garland</td>
-<td headers="AvgPoints" class="gt_row gt_right">21.7</td>
-<td headers="AvgRebounds" class="gt_row gt_right">2.7</td>
-<td headers="AvgAssists" class="gt_row gt_right">7.8</td>
-<td headers="AvgMinutes" class="gt_row gt_right">35.5</td>
-<td headers="Instagram.Followers" class="gt_row gt_right">501,369</td></tr>
-    <tr><td headers="athlete_display_name" class="gt_row gt_left gt_striped">Fred VanVleet</td>
-<td headers="AvgPoints" class="gt_row gt_right gt_striped">19.7</td>
-<td headers="AvgRebounds" class="gt_row gt_right gt_striped">4.2</td>
-<td headers="AvgAssists" class="gt_row gt_right gt_striped">7.2</td>
-<td headers="AvgMinutes" class="gt_row gt_right gt_striped">37.0</td>
-<td headers="Instagram.Followers" class="gt_row gt_right gt_striped">702,542</td></tr>
-    <tr><td headers="athlete_display_name" class="gt_row gt_left">James Harden</td>
-<td headers="AvgPoints" class="gt_row gt_right">21.1</td>
-<td headers="AvgRebounds" class="gt_row gt_right">6.2</td>
-<td headers="AvgAssists" class="gt_row gt_right">10.8</td>
-<td headers="AvgMinutes" class="gt_row gt_right">36.9</td>
-<td headers="Instagram.Followers" class="gt_row gt_right">155,637</td></tr>
-    <tr><td headers="athlete_display_name" class="gt_row gt_left gt_striped">Jrue Holiday</td>
-<td headers="AvgPoints" class="gt_row gt_right gt_striped">18.9</td>
-<td headers="AvgRebounds" class="gt_row gt_right gt_striped">4.9</td>
-<td headers="AvgAssists" class="gt_row gt_right gt_striped">7.2</td>
-<td headers="AvgMinutes" class="gt_row gt_right gt_striped">32.2</td>
-<td headers="Instagram.Followers" class="gt_row gt_right gt_striped">584,908</td></tr>
-    <tr><td headers="athlete_display_name" class="gt_row gt_left">LaMelo Ball</td>
-<td headers="AvgPoints" class="gt_row gt_right">23.3</td>
-<td headers="AvgRebounds" class="gt_row gt_right">6.4</td>
-<td headers="AvgAssists" class="gt_row gt_right">8.4</td>
-<td headers="AvgMinutes" class="gt_row gt_right">35.2</td>
-<td headers="Instagram.Followers" class="gt_row gt_right">9,833,584</td></tr>
-    <tr><td headers="athlete_display_name" class="gt_row gt_left gt_striped">Russell Westbrook</td>
-<td headers="AvgPoints" class="gt_row gt_right gt_striped">15.7</td>
-<td headers="AvgRebounds" class="gt_row gt_right gt_striped">5.8</td>
-<td headers="AvgAssists" class="gt_row gt_right gt_striped">7.6</td>
-<td headers="AvgMinutes" class="gt_row gt_right gt_striped">29.2</td>
-<td headers="Instagram.Followers" class="gt_row gt_right gt_striped">22,175,740</td></tr>
-    <tr><td headers="athlete_display_name" class="gt_row gt_left">Trae Young</td>
-<td headers="AvgPoints" class="gt_row gt_right">26.2</td>
-<td headers="AvgRebounds" class="gt_row gt_right">3.0</td>
-<td headers="AvgAssists" class="gt_row gt_right">9.9</td>
+    <tr><td headers="athlete_display_name" class="gt_row gt_left">Alperen Sengun</td>
+<td headers="AvgPoints" class="gt_row gt_right">14.8</td>
+<td headers="AvgRebounds" class="gt_row gt_right">8.8</td>
+<td headers="AvgAssists" class="gt_row gt_right">3.8</td>
+<td headers="AvgMinutes" class="gt_row gt_right">28.8</td>
+<td headers="Instagram.Followers" class="gt_row gt_right">375,657</td></tr>
+    <tr><td headers="athlete_display_name" class="gt_row gt_left gt_striped">Bam Adebayo</td>
+<td headers="AvgPoints" class="gt_row gt_right gt_striped">20.5</td>
+<td headers="AvgRebounds" class="gt_row gt_right gt_striped">9.2</td>
+<td headers="AvgAssists" class="gt_row gt_right gt_striped">3.2</td>
+<td headers="AvgMinutes" class="gt_row gt_right gt_striped">35.1</td>
+<td headers="Instagram.Followers" class="gt_row gt_right gt_striped">843,441</td></tr>
+    <tr><td headers="athlete_display_name" class="gt_row gt_left">Brook Lopez</td>
+<td headers="AvgPoints" class="gt_row gt_right">15.7</td>
+<td headers="AvgRebounds" class="gt_row gt_right">6.8</td>
+<td headers="AvgAssists" class="gt_row gt_right">1.3</td>
+<td headers="AvgMinutes" class="gt_row gt_right">30.3</td>
+<td headers="Instagram.Followers" class="gt_row gt_right">84,356</td></tr>
+    <tr><td headers="athlete_display_name" class="gt_row gt_left gt_striped">Christian Wood</td>
+<td headers="AvgPoints" class="gt_row gt_right gt_striped">16.7</td>
+<td headers="AvgRebounds" class="gt_row gt_right gt_striped">7.4</td>
+<td headers="AvgAssists" class="gt_row gt_right gt_striped">1.8</td>
+<td headers="AvgMinutes" class="gt_row gt_right gt_striped">26.0</td>
+<td headers="Instagram.Followers" class="gt_row gt_right gt_striped">215,713</td></tr>
+    <tr><td headers="athlete_display_name" class="gt_row gt_left">Evan Mobley</td>
+<td headers="AvgPoints" class="gt_row gt_right">16.3</td>
+<td headers="AvgRebounds" class="gt_row gt_right">9.1</td>
+<td headers="AvgAssists" class="gt_row gt_right">2.9</td>
 <td headers="AvgMinutes" class="gt_row gt_right">34.7</td>
-<td headers="Instagram.Followers" class="gt_row gt_right">4,963,114</td></tr>
-    <tr><td headers="athlete_display_name" class="gt_row gt_left gt_striped" style="background-color: #002D62; color: #FDBB30;">Tyrese Haliburton</td>
-<td headers="AvgPoints" class="gt_row gt_right gt_striped" style="background-color: #002D62; color: #FDBB30;">20.7</td>
-<td headers="AvgRebounds" class="gt_row gt_right gt_striped" style="background-color: #002D62; color: #FDBB30;">3.6</td>
-<td headers="AvgAssists" class="gt_row gt_right gt_striped" style="background-color: #002D62; color: #FDBB30;">10.3</td>
-<td headers="AvgMinutes" class="gt_row gt_right gt_striped" style="background-color: #002D62; color: #FDBB30;">33.2</td>
-<td headers="Instagram.Followers" class="gt_row gt_right gt_striped" style="background-color: #002D62; color: #FDBB30;">324,563</td></tr>
+<td headers="Instagram.Followers" class="gt_row gt_right">235,798</td></tr>
+    <tr><td headers="athlete_display_name" class="gt_row gt_left gt_striped">Jaren Jackson Jr.</td>
+<td headers="AvgPoints" class="gt_row gt_right gt_striped">17.8</td>
+<td headers="AvgRebounds" class="gt_row gt_right gt_striped">6.7</td>
+<td headers="AvgAssists" class="gt_row gt_right gt_striped">0.9</td>
+<td headers="AvgMinutes" class="gt_row gt_right gt_striped">27.8</td>
+<td headers="Instagram.Followers" class="gt_row gt_right gt_striped">453,408</td></tr>
+    <tr><td headers="athlete_display_name" class="gt_row gt_left">Josh Giddey</td>
+<td headers="AvgPoints" class="gt_row gt_right">16.6</td>
+<td headers="AvgRebounds" class="gt_row gt_right">7.9</td>
+<td headers="AvgAssists" class="gt_row gt_right">6.2</td>
+<td headers="AvgMinutes" class="gt_row gt_right">31.2</td>
+<td headers="Instagram.Followers" class="gt_row gt_right">454,186</td></tr>
+    <tr><td headers="athlete_display_name" class="gt_row gt_left gt_striped">Josh Hart</td>
+<td headers="AvgPoints" class="gt_row gt_right gt_striped">9.8</td>
+<td headers="AvgRebounds" class="gt_row gt_right gt_striped">7.7</td>
+<td headers="AvgAssists" class="gt_row gt_right gt_striped">3.8</td>
+<td headers="AvgMinutes" class="gt_row gt_right gt_striped">32.3</td>
+<td headers="Instagram.Followers" class="gt_row gt_right gt_striped">687,102</td></tr>
+    <tr><td headers="athlete_display_name" class="gt_row gt_left">Karl-Anthony Towns</td>
+<td headers="AvgPoints" class="gt_row gt_right">20.3</td>
+<td headers="AvgRebounds" class="gt_row gt_right">7.9</td>
+<td headers="AvgAssists" class="gt_row gt_right">4.8</td>
+<td headers="AvgMinutes" class="gt_row gt_right">33.2</td>
+<td headers="Instagram.Followers" class="gt_row gt_right">4,100,883</td></tr>
+    <tr><td headers="athlete_display_name" class="gt_row gt_left gt_striped">Kristaps Porzingis</td>
+<td headers="AvgPoints" class="gt_row gt_right gt_striped">23.2</td>
+<td headers="AvgRebounds" class="gt_row gt_right gt_striped">8.4</td>
+<td headers="AvgAssists" class="gt_row gt_right gt_striped">2.7</td>
+<td headers="AvgMinutes" class="gt_row gt_right gt_striped">32.6</td>
+<td headers="Instagram.Followers" class="gt_row gt_right gt_striped">1,491,749</td></tr>
+    <tr><td headers="athlete_display_name" class="gt_row gt_left">Kyle Kuzma</td>
+<td headers="AvgPoints" class="gt_row gt_right">21.2</td>
+<td headers="AvgRebounds" class="gt_row gt_right">7.2</td>
+<td headers="AvgAssists" class="gt_row gt_right">3.7</td>
+<td headers="AvgMinutes" class="gt_row gt_right">35.0</td>
+<td headers="Instagram.Followers" class="gt_row gt_right">4,937,607</td></tr>
+    <tr><td headers="athlete_display_name" class="gt_row gt_left gt_striped">Lauri Markkanen</td>
+<td headers="AvgPoints" class="gt_row gt_right gt_striped">25.4</td>
+<td headers="AvgRebounds" class="gt_row gt_right gt_striped">8.6</td>
+<td headers="AvgAssists" class="gt_row gt_right gt_striped">1.8</td>
+<td headers="AvgMinutes" class="gt_row gt_right gt_striped">34.3</td>
+<td headers="Instagram.Followers" class="gt_row gt_right gt_striped">395,303</td></tr>
+    <tr><td headers="athlete_display_name" class="gt_row gt_left">Myles Turner</td>
+<td headers="AvgPoints" class="gt_row gt_right">18.0</td>
+<td headers="AvgRebounds" class="gt_row gt_right">7.5</td>
+<td headers="AvgAssists" class="gt_row gt_right">1.4</td>
+<td headers="AvgMinutes" class="gt_row gt_right">29.4</td>
+<td headers="Instagram.Followers" class="gt_row gt_right">258,515</td></tr>
+    <tr><td headers="athlete_display_name" class="gt_row gt_left gt_striped">Paolo Banchero</td>
+<td headers="AvgPoints" class="gt_row gt_right gt_striped">20.0</td>
+<td headers="AvgRebounds" class="gt_row gt_right gt_striped">6.9</td>
+<td headers="AvgAssists" class="gt_row gt_right gt_striped">3.7</td>
+<td headers="AvgMinutes" class="gt_row gt_right gt_striped">33.7</td>
+<td headers="Instagram.Followers" class="gt_row gt_right gt_striped">894,264</td></tr>
+    <tr><td headers="athlete_display_name" class="gt_row gt_left">Scottie Barnes</td>
+<td headers="AvgPoints" class="gt_row gt_right">15.7</td>
+<td headers="AvgRebounds" class="gt_row gt_right">6.8</td>
+<td headers="AvgAssists" class="gt_row gt_right">4.9</td>
+<td headers="AvgMinutes" class="gt_row gt_right">35.1</td>
+<td headers="Instagram.Followers" class="gt_row gt_right">593,833</td></tr>
+    <tr><td headers="athlete_display_name" class="gt_row gt_left gt_striped">Wendell Carter Jr.</td>
+<td headers="AvgPoints" class="gt_row gt_right gt_striped">15.5</td>
+<td headers="AvgRebounds" class="gt_row gt_right gt_striped">8.7</td>
+<td headers="AvgAssists" class="gt_row gt_right gt_striped">2.3</td>
+<td headers="AvgMinutes" class="gt_row gt_right gt_striped">29.9</td>
+<td headers="Instagram.Followers" class="gt_row gt_right gt_striped">166,177</td></tr>
   </tbody>
   <tfoot class="gt_sourcenotes">
     <tr>
@@ -986,6 +1027,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 </div>
+<p>According to the dataset, only James Harden has fewer Instagram followers than Tyrese Haliburton, but upon further inspection, the dataset included the follower count from Harden’s old <a href="https://www.instagram.com/jamesharden13/">account</a>from 2017. James Harden’s current <a href="https://www.instagram.com/jharden13/?hl=en">account</a> has around 12 million followers, nearly 40 times more than Haliburton’s total.</p>
+<p>There are also additional issues with determining a team’s popularity solely from Instagram. For example, two-time league MVP Nikola Jókic does not have an Instagram page at all while Ja Morant recently <a href="https://www.yahoo.com/news/ja-morant-deactivates-twitter-instagram-213202377.html">deactivated</a> his account and is not part of the dataset.</p>
+<p>Unlike the NBA playoffs, the results of this analysis are not to be taken too seriously, but it is clear that the Indiana Pacers lack the league-wide popularity other players enjoy, despite producing similar outcomes on the court.</p>
 
 
 
